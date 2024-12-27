@@ -4,18 +4,22 @@ from constants import *
 def main():
     print("Staring asteroids!")
     
-    color =(0, 0, 0)
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     
-    running = True
+    clock = pygame.time.Clock()
+    dt = 0
     
-    while running:
+    while True:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 return
         
-        screen.fill(color)
+        screen.fill("black")
         pygame.display.flip()
+        
+        # Limit frame rate to 60 FPS
+        dt = clock.tick(60) / 1000
+        
     
     
     
